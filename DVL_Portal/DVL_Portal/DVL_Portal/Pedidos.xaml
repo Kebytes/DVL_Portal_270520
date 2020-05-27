@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Pedidos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="20,20,20,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="calendario.png" WidthRequest="20" HeightRequest="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Fecha deseada:" TextColor="Black" FontSize="15" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <DatePicker x:Name="FechaDeseada" MinimumDate="04/03/20" MaximumDate="12/31/2050" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150"/>
+
+                    <Image Source="estacion.png" WidthRequest="20" HeightRequest="20" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Selecciona una estación:" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Picker x:Name="Estacion" Title="Estación" ItemsSource="{Binding estaciones}" 
+                        ItemDisplayBinding="{Binding Nombre_Estacion}" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150"/>
+
+                    <Image Source="autotanque.png" WidthRequest="20" HeightRequest="20" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Autotanque:" TextColor="Black" FontSize="15" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Picker x:Name="AutotanqueOpcion" Title="Autotanque" ItemsSource="{Binding Opciones}" 
+                        ItemDisplayBinding="{Binding Nombre}" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150"/>
+
+                    <Image Source="magna.png" WidthRequest="20" HeightRequest="20" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="3" Grid.Column="1">
+                        <Label Text="Litros de magna:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="Magna" Placeholder="Litros de magna" BackgroundColor="White" PlaceholderColor="Gray" TextChanged="Magna_TextChanged" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="3" Grid.Column="2">
+                        <Label Text="Cambiar cantidad:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Stepper x:Name="IncrementoMagna" Minimum="0" Maximum="100000" Value="0" Increment="10000" ValueChanged="IncrementoMagna_ValueChanged" VerticalOptions="Center"
+                             HorizontalOptions="Center"></Stepper>
+                    </StackLayout>
+
+                    <Image Source="premium.png" WidthRequest="20" HeightRequest="20" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="4" Grid.Column="1">
+                        <Label Text="Litros de premium:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="Premium" Placeholder="Litros de premium" BackgroundColor="White" PlaceholderColor="Gray" TextChanged="Premium_TextChanged" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="4" Grid.Column="2">
+                        <Label Text="Cambiar cantidad:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Stepper x:Name="IncrementoPremium" Minimum="0" Maximum="100000" Value="0" Increment="10000" ValueChanged="IncrementoPremium_ValueChanged"
+                             VerticalOptions="Center" HorizontalOptions="Center"></Stepper>
+                    </StackLayout>
+
+                    <Image Source="diesel.png" WidthRequest="20" HeightRequest="20" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="5" Grid.Column="1">
+                        <Label Text="Litros de diesel:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="Diesel" Placeholder="Litros de diesel" BackgroundColor="White" PlaceholderColor="Gray" TextChanged="Diesel_TextChanged" HorizontalTextAlignment="Center" Keyboard="Numeric"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="5" Grid.Column="2">
+                        <Label Text="Cambiar cantidad:" TextColor="Black" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Stepper x:Name="IncrementoDiesel" Minimum="0" Maximum="100000" Value="0" Increment="10000" ValueChanged="IncrementoDiesel_ValueChanged"
+                             VerticalOptions="Center" HorizontalOptions="Center"></Stepper>
+                    </StackLayout>
+                </Grid>
+                <StackLayout VerticalOptions="End" Orientation="Vertical">
+                    <Button Text="Realizar pedido" TextColor="Black" FontSize="20" CornerRadius="25" BackgroundColor="White" Clicked="Button_Clicked" BorderWidth="3" BorderColor="Red"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

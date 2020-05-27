@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Detalle_Pedido">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Padding="20,20,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                    <Label Text="Pedido:" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold"/>
+                    <Label Text="{Binding Folio_Pedido}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold" x:Name="Folio"/>
+                </StackLayout>
+
+                <Image Source="{Binding OracionImagen}" WidthRequest="20" HeightRequest="20" Grid.Row="1" Grid.Column="0" x:Name="ImagenEstado"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="1" Grid.Column="1">
+                    <Label Text="Estado actual" FontSize="15"/>
+                    <Label Text="{Binding OracionEstatus}" FontSize="20" x:Name="Confirmado"/>
+                </StackLayout>
+
+                <Image Source="estacion.png" WidthRequest="20" HeightRequest="20" Grid.Row="2" Grid.Column="0"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="2" Grid.Column="1">
+                    <Label Text="Estación de servicio" FontSize="15"/>
+                    <Label Text="{Binding Nombre_Estacion}" FontSize="20" x:Name="ValorEstacion"/>
+                </StackLayout>
+
+                <Image Source="calendario.png" WidthRequest="20" HeightRequest="20" Grid.Row="3" Grid.Column="0"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="3" Grid.Column="1">
+                    <Label Text="Fecha agendada del pedido" FontSize="15"/>
+                    <Label Text="{Binding Fecha_Programada}" FontSize="20" x:Name="FechaAgendada"/>
+                </StackLayout>
+
+                <Image Source="autotanque.png" WidthRequest="20" HeightRequest="20" Grid.Row="4" Grid.Column="0"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="4" Grid.Column="1">
+                    <Label Text="Autotanque" FontSize="15"/>
+                    <Label Text="{Binding Autotanque}" FontSize="20" x:Name="ValorAutanque"/>
+                </StackLayout>
+
+                <Image Source="calendario.png" WidthRequest="20" HeightRequest="20" Grid.Row="5" Grid.Column="0"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="5" Grid.Column="1">
+                    <Label Text="Pedido registrado el día" FontSize="15"/>
+                    <Label Text="{Binding Fecha_Registro}" FontSize="20" x:Name="FechaRegistro"/>
+                </StackLayout>
+
+                <Image Source="litros.png" WidthRequest="20" HeightRequest="20" Grid.Row="6" Grid.Column="0"/>
+                <StackLayout Orientation="Vertical" Margin="20" Grid.Row="6" Grid.Column="1">
+                    <Label Text="Detalle del pedido" FontSize="15"/>
+                    <Label Text="{Binding TotalLitros}" FontSize="20" x:Name="Total"/>
+                    <Label Text="{Binding OracionPremium}" FontSize="20" x:Name="Premium"/>
+                    <Label Text="{Binding OracionMagna}" FontSize="20" x:Name="Magna"/>
+                    <Label Text="{Binding OracionDiesel}" FontSize="20" x:Name="Diesel"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="0,0,0,20" Grid.Row="7" Grid.Column="1">
+                    <Button Text="Cancelar pedido" TextColor="Black" FontSize="20" CornerRadius="25" BorderColor="Red" BackgroundColor="White" BorderWidth="2" Clicked="Button_Clicked"/>
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

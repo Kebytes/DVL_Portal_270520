@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Login">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="logo.jpg" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+
+
+                <Frame Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="20" HeightRequest="140" Margin="20,20,20,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Inicia sesión con tu cuenta:" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Image Source="usuario.png"/>
+                            <Entry Placeholder="Email o estación" WidthRequest="250" HeightRequest="260" Keyboard="Chat" x:Name="Usuario"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Image Source="contrasena.png"/>
+                            <Entry Placeholder="Contraseña" WidthRequest="250" HeightRequest="260" IsPassword="True" x:Name="Password"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Margin="20,-40,0,0">
+                    <Frame BackgroundColor="Transparent" HeightRequest="400" WidthRequest="300">
+                        <StackLayout Orientation="Vertical">
+                            <Button Margin="10,0,10,0" Text="Iniciar sesión" FontSize="20" FontAttributes="Bold" WidthRequest="250" BackgroundColor="#905D24" Clicked="Button_Clicked" TextColor="White"/>
+                            <Button Margin="10,10,10,0" Text="Olvidé mi contraseña" FontSize="20" FontAttributes="Bold" WidthRequest="250" HeightRequest="50" BackgroundColor="White" TextColor="#905D24" x:Name="Contrasena" Clicked="Contrasena_Clicked"/>
+                            <Button Margin="10,-10,10,0" Text="Regístrate aquí" FontSize="20" FontAttributes="Bold" WidthRequest="250" HeightRequest="50" BackgroundColor="White" TextColor="#905D24" x:Name="Registro" Clicked="Registro_Clicked" IsVisible="False"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

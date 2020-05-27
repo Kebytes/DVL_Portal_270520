@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Olvide_Contrasena">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="logo.jpg" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+
+
+                <Frame Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="20" HeightRequest="160" Margin="20,20,20,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Por favor, ingresa tu correo:" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+                        <StackLayout Grid.Row="1" Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Start" Margin="20,10,0,50">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="usuario.png" Margin="20,0,0,0"/>
+                                <Entry Placeholder="Email" WidthRequest="250" HeightRequest="50" x:Name="Usuario" Keyboard="Chat"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Button Grid.Row="2" Margin="40,-30,10,0" Text="Confirmar" FontSize="20" FontAttributes="Bold" WidthRequest="250" BackgroundColor="#905D24" Clicked="Button_Clicked" TextColor="White" x:Name="Token"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

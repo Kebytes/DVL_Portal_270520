@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Contrasena_Nueva">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="logo.jpg" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+
+
+                <Frame Grid.Row="1" BackgroundColor="Transparent" BorderColor="Transparent" CornerRadius="20" HeightRequest="140" Margin="20,20,20,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Cambio de contraseña:" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Image Source="contrasena.png"/>
+                            <Entry Placeholder="Contraseña" WidthRequest="250" HeightRequest="260" IsPassword="True" x:Name="Password"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Image Source="contrasena.png"/>
+                            <Entry Placeholder="Confirmar contraseña" WidthRequest="250" HeightRequest="260" IsPassword="True" x:Name="Password2"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-30,0,0">
+                    <Frame BackgroundColor="Transparent" HeightRequest="400" WidthRequest="300">
+                        <StackLayout Orientation="Vertical">
+                            <Button Margin="10,0,10,0" Text="Cambiar contraseña" FontSize="20" FontAttributes="Bold" WidthRequest="250" BackgroundColor="#905D24" Clicked="Button_Clicked" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

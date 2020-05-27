@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DVL_Portal.Registro_Cliente">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Margin="20,20,20,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="usuario.png" WidthRequest="20" HeightRequest="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Razon" Placeholder="Razón social" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="telefono.png" WidthRequest="20" HeightRequest="20" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Telefono" Placeholder="Teléfono" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="usuario.png" WidthRequest="20" HeightRequest="20" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Email" Placeholder="Email" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="2" Grid.Column="1" WidthRequest="200" Keyboard="Chat"/>
+
+                    <Image Source="contrasena.png" WidthRequest="20" HeightRequest="20" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Password" Placeholder="Contraseña" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="3" Grid.Column="1" WidthRequest="200" IsPassword="True"/>
+
+                    <Image Source="usuario.png" WidthRequest="20" HeightRequest="20" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="RFC" Placeholder="RFC" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="4" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="place.png" WidthRequest="20" HeightRequest="20" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Direccion" Placeholder="Dirección de factura" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="usuario.png" WidthRequest="20" HeightRequest="20" Grid.Row="6" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Email_Factura" Placeholder="Email de factura" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="6" Grid.Column="1" WidthRequest="200" Keyboard="Chat"/>
+
+                    <Image Source="usuario.png" WidthRequest="20" HeightRequest="20" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Contacto" Placeholder="Nombre del contacto" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="7" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="telefono.png" WidthRequest="20" HeightRequest="20" Grid.Row="8" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Reparto" Placeholder="Reparto" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="8" Grid.Column="1" WidthRequest="200"/>
+
+                    <Image Source="telefono.png" WidthRequest="20" HeightRequest="20" Grid.Row="9" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="Telefono_Contacto" Placeholder="Teléfono de contacto" BackgroundColor="White" PlaceholderColor="Gray" HorizontalTextAlignment="Center" Grid.Row="9" Grid.Column="1" WidthRequest="200"/>
+                </Grid>
+                <StackLayout VerticalOptions="End" Orientation="Vertical">
+                    <Button Text="Registrar cliente" TextColor="Black" FontSize="20" CornerRadius="25" BackgroundColor="White" BorderWidth="3" BorderColor="Red" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
